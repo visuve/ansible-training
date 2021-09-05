@@ -1,4 +1,5 @@
 - name: Install Glances
+  become: true
   apt:
     name: glances
     state: present
@@ -9,19 +10,22 @@
 #    state: absent
 
 - name: Remove Glances initd autostart
+  become: true
   file:
     path: /etc/init.d/glances
     state: absent
 
 - name: Configure Glances systemd autostart
+  become: true
   template:
     src: glancesweb.service.j2
     dest: /etc/systemd/system/glancesweb.service
 
 - name: Enable glancesweb systemd autostart
+  become: true
   systemd:
     name: glancesweb
     enabled: yes
     masked: no
-    notify: Reboot host
+  notify: Reboot host
 

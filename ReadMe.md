@@ -61,3 +61,28 @@ all:
 
 # 6. Implement playbook
 - `touch playbook.yml`
+
+# 7. Run playbook
+
+- `ansible-playbook -i inventory.yml playbook.yml`
+- Should fail with:
+```
+...
+open (13: Permission denied)\nE: Unable to lock the administration directory (/var/lib/dpkg/), are you root?\n", "stdout": "", "stdout_lines": []}
+...
+```
+
+# 8. Add "become" in tasks where sudo is needed
+
+E.g.
+```
+- name: Install Glances
+  become: true
+  . . .
+```
+
+- Should still fail with:
+```
+...
+"module_stdout": "sudo: a password is required\r\n"
+```
