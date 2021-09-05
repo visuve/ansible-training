@@ -40,3 +40,15 @@ all:
     "ping": "pong"
 }
 ```
+
+# 4. Generate role for Glances
+
+- Create directories
+- `mkdir -p roles/glances/tasks`
+- `mkdir -p roles/glances/handlers`
+- `mkdir -p roles/glances/templates`
+
+- Create skeletons
+- `touch roles/glances/tasks/main.yml`
+- `touch roles/glances/handlers/main.yml`
+- `touch roles/glances/templates/glancesweb.service.j2`
