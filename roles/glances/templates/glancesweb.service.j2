@@ -1,0 +1,9 @@
+[Unit]
+Description=GlancesWeb
+After=systemd-networkd.service
+
+[Service]
+ExecStart=/usr/bin/glances -w
+
+[Install]
+WantedBy=multi-user.target

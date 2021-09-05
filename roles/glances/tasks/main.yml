@@ -1,0 +1,27 @@
+- name: Install Glances
+  apt:
+    name: glances
+    state: present
+
+# - name: Remove Glances initd autostart
+#  ansible.builtin.file:
+#    path: /etc/init.d/glances
+#    state: absent
+
+- name: Remove Glances initd autostart
+  file:
+    path: /etc/init.d/glances
+    state: absent
+
+- name: Configure Glances systemd autostart
+  template:
+    src: glancesweb.service.j2
+    dest: /etc/systemd/system/glancesweb.service
+
+- name: Enable glancesweb systemd autostart
+  systemd:
+    name: glancesweb
+    enabled: yes
+    masked: no
+    notify: Reboot host
+

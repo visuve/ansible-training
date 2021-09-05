@@ -1,0 +1,5 @@
+- name: Install Glances on all hosts
+  hosts: all
+  remote_user: ite
+  roles:
+    - glances
