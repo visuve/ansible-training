@@ -99,3 +99,5 @@ E.g.
   
 # 10. Finally run our playbook!
 - `ansible-playbook --ask-vault-pass -i inventory.yml playbook.yml`
+
+# 11. BONUS: automate the UFW as well ;-)

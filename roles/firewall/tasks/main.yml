@@ -1,0 +1,40 @@
+- name: Install UFW
+  become: true
+  apt:
+    name: ufw
+    state: present
+
+- name: Reset rules
+  become: true
+  ufw:
+    state: reset
+
+- name: Deny incoming
+  become: true
+  ufw:
+    direction: incoming
+    policy: deny
+
+- name: Allow outgoing
+  become: true
+  ufw:
+    direction: outgoing
+    policy: allow
+
+- name: Allow SSH
+  become: true
+  ufw:
+    rule: allow
+    name: ssh
+
+- name: Allow Glances
+  become: true
+  ufw:
+    rule: allow
+    port: 61208
+    proto: tcp
+
+- name: Enable ufw
+  become: true
+  ufw:
+    state: enabled

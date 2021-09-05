@@ -3,3 +3,4 @@
   remote_user: ite
   roles:
     - glances
+    - firewall
