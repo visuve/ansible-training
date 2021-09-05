@@ -4,10 +4,12 @@ Requires=systemd-networkd.service
 After=systemd-networkd.service
 
 [Timer]
-OnBootSec=10
+OnBootSec=20
 
 [Service]
 ExecStart=/usr/bin/glances -w
+Restart=on-failure
+RestartSec=10s
 
 [Install]
 WantedBy=multi-user.target
