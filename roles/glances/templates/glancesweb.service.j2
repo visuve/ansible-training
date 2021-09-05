@@ -1,6 +1,10 @@
 [Unit]
 Description=GlancesWeb
+Requires=systemd-networkd.service
 After=systemd-networkd.service
+
+[Timer]
+OnBootSec=10
 
 [Service]
 ExecStart=/usr/bin/glances -w
