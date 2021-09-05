@@ -86,3 +86,16 @@ E.g.
 ...
 "module_stdout": "sudo: a password is required\r\n"
 ```
+
+# 9. Either hack things or do it right...
+
+- Add `ansible_become_pass` in inventory.yml
+- `ansible-vault encrypt inventory.yml`
+
+- Note: if you can't stand vi:
+  - `nano ~/.bashrc`
+  - `export EDITOR=nano`
+  - `. ~/.bashrc`
+  
+# 10. Finally run our playbook!
+- `ansible-playbook --ask-vault-pass -i inventory.yml playbook.yml`
