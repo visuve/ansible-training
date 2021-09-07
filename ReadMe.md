@@ -6,13 +6,13 @@
 ```
 all:
   hosts:
-    192.168.2.130
+    10.0.x.xxx
   vars:
-    ansible_user: ite
+    ansible_user: ansible
 ```
 
 # 2. Test inventory
-- `ansible all -m ping`
+- `ansible all -i inventory.yml -m ping`
 
 - Should fail with:
 ```
