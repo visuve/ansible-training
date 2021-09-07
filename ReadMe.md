@@ -27,7 +27,7 @@ all:
 
 - On the seed machine
   - `ssh-keygen -f ~/avain`
-  - `ssh-copy-id -i ~/avain ite@192.168.2.130`
+  - `ssh-copy-id -i ~/avain ansible@10.0.x.xxx`
   - `ssh-add ~/avain`
   
 # 4. Test inventory
