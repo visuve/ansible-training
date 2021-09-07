@@ -55,9 +55,9 @@ all:
 
 # 5. Fill skeletons
 
-- `roles/glances/handlers/main.yml`
-- `roles/glances/handlersr/main.yml`
-- `roles/glances/templates/glancesweb.service.j2`
+- `nano roles/glances/tasks/main.yml`
+- `nano roles/glances/handlers/main.yml`
+- `nano roles/glances/templates/glancesweb.service.j2`
 
 # 6. Implement playbook
 - `touch playbook.yml`
