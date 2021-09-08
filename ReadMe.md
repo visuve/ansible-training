@@ -1,3 +1,8 @@
+# 0. Intro
+
+- This is an introduction how to automate software installation & configuration using Ansible
+- Basically automates this gist: https://gist.github.com/visuve/ddebd92efda4eda0ee89cbc5d9a7ecf8
+
 # 1. Create inventory
 
 - `mkdir projekti`
